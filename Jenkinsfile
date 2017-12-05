@@ -4,12 +4,13 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building dependencies...'
-        sh 'rm -rf node_modules/'
-        sh 'yarn install --mutex network'
+        sh 'printenv'
+        /*sh 'rm -rf node_modules/'
+        sh 'yarn install --mutex network'*/
       }
     }
 
-    stage('Lint') {
+    /*stage('Lint') {
       steps {
         echo 'Linting...'
         sh 'yarn lint'
@@ -23,6 +24,6 @@ pipeline {
           sh 'yarn test'
         }
       }
-    }
+    }*/
   }
 }
