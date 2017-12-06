@@ -5,8 +5,15 @@ pipeline {
       steps {
         echo 'Building dependencies...'
         sh 'printenv'
+        sh 'exit 1'
         /*sh 'rm -rf node_modules/'
         sh 'yarn install --mutex network'*/
+      }
+      post {
+        failure {
+          echo 'This is failure thing'
+          sh 'printenv'
+        }
       }
     }
 
